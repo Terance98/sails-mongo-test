@@ -6,6 +6,10 @@ const getHomePage = async (req, res) => {
     // ("albums" would be defined in `api/models/User.js` as an attribute of type "json".)
     db.collection('users').find().toArray(console.log);
 
+    db.collection('product').insertOne(
+        { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
+    )
+
     res.view('pages/homepage');
 }
 
